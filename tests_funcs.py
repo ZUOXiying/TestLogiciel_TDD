@@ -28,7 +28,7 @@ class TestFuncs(unittest.TestCase):
         self.assertFalse(funcs.si_arithmetique([2,4,6,8,11]))
 
     def test_geometrique_plus(self):
-        """test si la suite est géométrique et renvoiela liste des n éléments suivant"""
+        """test si la suite est géométrique et renvoie la liste des n éléments suivant"""
         self.assertEqual(funcs.geometrique_plus(1, [1,2,4,8,16]), [True, [32]])
         self.assertEqual(funcs.geometrique_plus(2, [-1,1,-1,1,-1]), [True, [1,-1]])
         self.assertEqual(funcs.geometrique_plus(3, [16,8,4,2,1]), [True, [0.5,0.25,0.125]])
