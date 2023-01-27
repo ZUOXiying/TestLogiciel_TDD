@@ -71,3 +71,17 @@ def unit_valid(list_sudoku):
             if sum(unit_vals) != sum(set(unit_vals)):
                 return False
     return True
+
+def colonne_valid(list_sudoku):
+    """Déterminer si chaque colonne de données est en conflit"""
+    for i in range(9):
+        unit,unit_vals = [],[]
+        for j in range(9):
+            unit.append(list_sudoku[j][i])
+        for temp in filter(lambda x: x != ".", unit):
+            unit_vals.append(int(temp))
+        if sum(unit_vals) == sum(set(unit_vals)):
+            continue
+        if sum(unit_vals) != sum(set(unit_vals)):
+            return False
+    return True
