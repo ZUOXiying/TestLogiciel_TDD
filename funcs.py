@@ -40,3 +40,18 @@ def geometrique_plus(n_suite,list_geo):
     for i in range(1,n_suite):
         list_geo_plus.append(list_geo_plus[i-1]*q_list)
     return [True,list_geo_plus]
+
+def arithmetique_plus(n_suite,list_ari):
+    """si la suite est arithmetique et renvoiela liste des n éléments suivant"""
+    if not si_arithmetique(list_ari):
+        return False
+    if n_suite < 0:
+        return False
+    if n_suite == 0:
+        return [True,[]]
+    numbre = len(list_ari)
+    q_list = list_ari[1]-list_ari[0]
+    list_ari_plus = [list_ari[numbre-1] + q_list]
+    for i in range(1,n_suite):
+        list_ari_plus.append(list_ari_plus[i-1]+q_list)
+    return [True,list_ari_plus]
