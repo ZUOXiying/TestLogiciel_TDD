@@ -55,3 +55,19 @@ def arithmetique_plus(n_suite,list_ari):
     for i in range(1,n_suite):
         list_ari_plus.append(list_ari_plus[i-1]+q_list)
     return [True,list_ari_plus]
+
+def unitIsValid(list_sudoku):
+    """Déterminer si les données de la grille 3*3 sont en conflit"""
+    for i in range(1,8,3):
+        for j in range(1,8,3):
+            a,b = [],[]
+            for x in range(i-1,i+2):
+                for y in range(j-1,j+2):
+                    a.append(list_sudoku[x][y])
+            for t in filter(lambda x: x != ".", a):
+                    b.append(int(t))
+            if sum(b) == sum(set(b)):
+                continue
+            if sum(b) != sum(set(b)):
+                return False
+    return True
