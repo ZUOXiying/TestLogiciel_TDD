@@ -98,3 +98,7 @@ def ligne_valid(list_sudoku):
         if sum(unit_vals) != sum(set(unit_vals)):
             return False
     return True
+
+def sudoku_valid(list_sudoku):
+    """Déterminer si Sudoku est valide"""
+    return unit_valid(list_sudoku)&colonne_valid(list_sudoku)&ligne_valid(list_sudoku)
