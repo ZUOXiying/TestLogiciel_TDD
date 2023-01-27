@@ -59,7 +59,7 @@ class TestFuncs(unittest.TestCase):
 					[".",".",".","2",".","9",".",".","."],
 					[".",".",".",".",".",".",".","5","8"]
 		]
-        self.assertTrue(funcs.unitIsValid(sudoku1))
+        self.assertTrue(funcs.unit_valid(sudoku1))
         sudoku2 = [["1","2","3",".","7",".",".",".","."],
   					["4","8","6","1","4","9",".",".","."],
   					["7","5","7",".",".",".",".",".","."],
@@ -70,6 +70,6 @@ class TestFuncs(unittest.TestCase):
 					[".",".",".","2",".","9",".",".","."],
 					[".",".",".",".",".",".",".","5","8"]
 		]
-        self.assertFalse(funcs.unitIsValid(sudoku2))
+        self.assertFalse(funcs.unit_valid(sudoku2))
 if __name__ == '__main__':
     unittest.main()
